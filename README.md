@@ -1,4 +1,13 @@
-# Unity-Bug-Report-Playable-IN-37603
+# [Avoidable][Won't Fix] Unity-Bug-Report-Playable-IN-37603
+
+**Unity has stated that they will not fix this bug.**
+
+> RESOLUTION NOTE:
+> This issue happens because the PlayableGraph with a TimeUpdateMode set to Manual does not schedule any graph playback when calling `PlayableGraph.Play` but is still in 'IsPlaying' mode.
+> 
+> **Calling `PlayableGraph.Stop` before changing TimeUpdateMode to anything else than Manual will ensure that the graph is schedule the next time `PlayableGraph.Play` is called.**
+> 
+> Changing this behaviour for PlayableGraph breaks too many existing behaviours, and it's not possible to change it at this point.
 
 ## About this issue
 
